@@ -20,7 +20,7 @@ module "openai" {
       name          = "gpt-35-turbo"
       model_format  = "OpenAI"
       model_name    = "gpt-35-turbo"
-      model_version = "0301"
+      model_version = "0613"
       scale_type    = "Standard"
       capacity      = 120
     },
