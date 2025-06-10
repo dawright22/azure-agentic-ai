@@ -1,6 +1,5 @@
 module "openai" {
-  source              = "Azure/openai/azurerm"
-  version             = "0.1.3"
+  source              = "./modules/openai"
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
   private_endpoint = {
@@ -20,7 +19,7 @@ module "openai" {
       name          = "gpt-35-turbo"
       model_format  = "OpenAI"
       model_name    = "gpt-35-turbo"
-      model_version = "0613"
+      model_version = "0125"
       scale_type    = "Standard"
       capacity      = 120
     },

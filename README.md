@@ -1,8 +1,11 @@
 # Azure OpenAI Terraform deployment for sample chatbot
 
-This sample application deploys an AI-powered document search using Azure OpenAI Service, Azure Kubernetes Service (AKS), and a Python application leveraging the [Llama index](https://gpt-index.readthedocs.io/en/latest/) ans [Streamlit](https://docs.streamlit.io/library/get-started). The application will be deployed within a virtual network to ensure security and isolation. Users will be able to upload documents and ask questions based on the content of the uploaded documents.
+This sample application deploys an AI-powered application with a database a claulator and websearch linked to Azure OpenAI Service, Azure Kubernetes Service (AKS), and a Python application leveraging the [Llama index](https://gpt-index.readthedocs.io/en/latest/) ans [Streamlit](https://docs.streamlit.io/library/get-started). The application will be deployed within a virtual network to ensure security and isolation. Users will be able to upload documents and ask questions based on the content of the uploaded documents.
 
-![diagram](./images/rag.png)
+![diagram](./images/agentic-ai.png)
+
+## Application Arhictecture
+![diagram](/images/diagram.png)
 
 ## Prerequisites
 
@@ -18,8 +21,8 @@ This sample application deploys an AI-powered document search using Azure OpenAI
 
 - Clone or fork this repository. 
    ```
-   git clone https://github.com/dawright22/azure-rag-terraform-deployment-demo.git
-   cd azure-openai-terraform-quickstart
+   git clone https://github.com/dawright22/azure-agentic-ai.git
+   cd azure-agentic-ai
    ```
 
 - Go to the `infra` folder and run the following command to initialize your working directory.
@@ -34,27 +37,15 @@ This sample application deploys an AI-powered document search using Azure OpenAI
     ```bash
     terraform apply
     ```
-- Get the external ip address of the service by running the  command bellow.
-
-    ```bash
-    kubectl get services -n chatbot
-    ```
+- The external ip address of the service is shown in the Terrafrom output 
 
 - Copy the external ip address and paste it in your browser. The application should load in a few seconds.
 
 ![app](/images/application.png)
 
 ## Run the AI.
-- Upload the Madeup_Company_email_archive.txt file in the `data` folder. Using the upload button on the app.
-
-- Ask some questions based on the content of the uploaded document. Some example are below.
-
-================
-- Does madeup use Azure
-- Tell me the subscription_id
-
-
-The application will return the answer to the question asked based on the content of the uploaded document. Any of the content from the Madeup_Company_email_archive.txt file source that matches the filter critera (ie Azure credentials) will be returned but encrypted via Vault.
+- In the chatbot, is a seeded dataset on population. The application will process inputs and allow you to ask questions based on their content.
+- For example, you can ask questions like  "What is the population of China? in the database compared with current online data and calulate the difference".
 
 ## Clean up
 

@@ -19,6 +19,12 @@ provider "azurerm" {
 
 provider "random" {}
 
+resource "random_pet" "app_name" {
+  count = 1
+  prefix = "azure-agnetic-terraform"
+  separator = "-"
+}
+
 
 data "azurerm_subscription" "current" {}
 data "azurerm_client_config" "current" {}
@@ -41,9 +47,8 @@ provider "helm" {
 }
 
 
-# # Configure the Vault provider to interact with the newly created cluster
-# provider "vault" {
-#   address = var.vault_addr
-#   token = var.vault_token
-#     # Ensure you have a method to authenticate to Vault, such as a token.
-# }
+provider vault {
+  address = var.vault_addr
+  token   = var.vault_token
+  namespace = "admin"
+}
