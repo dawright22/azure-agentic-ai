@@ -41,7 +41,7 @@ This sample application deploys an AI-powered application with a database a clau
 
 - Copy the external ip address and paste it in your browser. The application should load in a few seconds.
 
-
+![app](/images/application.png)
 
 ## Run the AI.
 - In the chatbot, is a seeded dataset on population. The application will process inputs and allow you to ask questions based on their content.
