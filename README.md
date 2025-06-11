@@ -1,6 +1,6 @@
 # Azure OpenAI Terraform deployment for sample chatbot
 
-This sample application deploys an AI-powered application with a database a claulator and websearch linked to Azure OpenAI Service, Azure Kubernetes Service (AKS), and a Python application leveraging the [Llama index](https://gpt-index.readthedocs.io/en/latest/) ans [Streamlit](https://docs.streamlit.io/library/get-started). The application will be deployed within a virtual network to ensure security and isolation. Users will be able to upload documents and ask questions based on the content of the uploaded documents.
+This sample application deploys an AI-powered application with a database a calculator, and websearch linked to Azure OpenAI Service, Azure Kubernetes Service (AKS), and a Python application leveraging the [Llama index](https://gpt-index.readthedocs.io/en/latest/) and [Streamlit](https://docs.streamlit.io/library/get-started). The application will be deployed within a virtual network to ensure security and isolation. Users will be able to upload documents and ask questions based on the content of the uploaded documents.
 
 ![diagram](./images/agentic-ai.png)
 
